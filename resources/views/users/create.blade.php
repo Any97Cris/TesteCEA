@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Cadastrar Produto') }}</div>
+                <div class="card-header">{{ __('Cadastrar Usuario') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,20 +13,23 @@
                             {{ session('status') }}
                         </div>
                     @endif                    
-                    <form action="/produtos/store" method="POST" enctype="multipart/form-data">
+                    <form action="/usuarios/store" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="title">Nome: </label>
-                            <input type="text" class="form-control" id="name" name="name" required placeholder="Nome do Produto">
+                            <input type="text" class="form-control" id="name" name="name" required placeholder="Nome do Usuario">
                         </div>
-                        <br>
                         <div class="form-group">
-                            <label for="image">Imagem do produto: </label>
-                            <input type="file" class="form-control-file" id="image" name="image" required placeholder="Inserir imagem do produto">
+                            <label for="title">Email </label>
+                            <input type="email" class="form-control" id="email" name="email" required placeholder="Inserir E-mail">
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Senha</label>
+                            <input type="password" class="form-control" id="password" name="password" required placeholder="Inserir Senha">
                         </div>
                         <br>
                         <br>
-                        <a href="/produtos" class="btn btn-secondary">Voltar</a>
+                        <a href="/usuarios" class="btn btn-secondary">Voltar</a>
                         <input type="submit" value="Salvar" class="btn btn-primary">
                         
                     </form>
@@ -36,3 +39,4 @@
     </div>
 </div>
 @endsection
+

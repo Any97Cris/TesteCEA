@@ -15,7 +15,7 @@
                     @endif
 
                     <a href="/produtos" class="btn btn-primary">Produtos</a>
-                    <a href="#" class="btn btn-primary">Usuarios</a>
+                    <a href="/usuarios" class="btn btn-primary">Usuarios</a>
                 </div>
             </div>
         </div>

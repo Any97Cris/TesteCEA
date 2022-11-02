@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Produtos') }}</div>
+                <div class="card-header">{{ __('Usuarios') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,25 +13,23 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a href="produtos/create" class="btn btn-primary">Cadastrar</a>
+                    <a href="usuarios/create" class="btn btn-primary">Cadastrar</a>
                     <table class="table">
                         <thead>
                           <tr>
                             <th scope="col">Nome</th>
-                            <th scope="col">Imagem</th>
+                            <th scope="col">Email</th>
                             <th scope="col">Ações</th>
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach($products as $product)
+                            @foreach($users as $user)
                           <tr>
-                            <th scope="row">{{$product->name}}</th>
+                            <th scope="row">{{$user->name}}</th>
+                            <td>{{$user->email}}</td>
                             <td>
-                            <img style="width:150px;" src="/prod/{{$product->image}}" alt="{{$product->image}}">
-                            </td>
-                            <td>
-                                <a href="produtos/edit/{{$product->id}}" class="btn btn-primary btn-sm">Editar</a>
-                                <a href="produtos/delete/{{$product->id}}" class="btn btn-danger btn-sm">Delete</a>                                
+                                <a href="usuarios/edit/{{$user->id}}" class="btn btn-primary btn-sm">Editar</a>
+                                <a href="usuarios/delete/{{$user->id}}" class="btn btn-danger btn-sm">Delete</a>                                
                             </td>                            
                           </tr>  
                           @endforeach                        

@@ -76,6 +76,13 @@
         </nav>
 
         <main class="py-4">
+            @if(session('msg'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <p class="msg">{{session('msg')}}</p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            
+            @endif
             @yield('content')
         </main>
     </div>
